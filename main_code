@@ -1,0 +1,120 @@
+def getResponse(statement):
+
+    response = "";
+
+
+    if (statement.find("mother") >= 0 or
+    statement.find("father") >= 0 or
+    statement.find("brother") >= 0 or
+    statement.find("sister") >= 0):
+        response = "Tell me more about your family."
+
+    elif (statement.find("dog")>= 0 or
+    statement.find("cat") >=0 or
+    statement.find("rock") >=0):
+        response = "Tell me more about your pets."
+    elif (statement.find("lam") >=0):
+        response = "Mrs. Lam always says 'no mercy', but i think she means 'no murphy'"
+
+    elif statement.find("no")>= 0:
+        response = "Why so negative?"
+
+    else:
+
+        response = getRandomResponse()+' '+getRandomResponse1()+' '+getRandomResponse2()
+
+    return response
+
+'''
+getRandomResponse():
+    Magpie will return a random statement if a keyword is not found.
+    First it generates a random number
+    ...and then chooses a statement based on that number, using a dictionary.
+
+    In the lab, you are to modify this method in part 3.
+'''
+def getRandomResponse():
+
+    randomResponses = { 1: "lazy",
+                        2: "stupid",
+                        3: "insecure",
+                        4: "idiotic" ,
+                        5: "slimy",
+                        6: "slutty",
+                        7: "smelly",
+                        8: "pompous",
+                        9: "communist",
+                        10: 'dicknose',
+                        11: 'pie-eating',
+                        12: 'racist',
+                        13: 'elitist',
+                        14: 'white trash',
+                        15: 'drug-loving',
+                        16: 'butterface',
+                        17: 'tone deaf',
+                        18: 'ugly',
+                        19: 'creepy',
+                        }
+    whichResponse = randomResponses[randint(1,19)]
+
+    return whichResponse
+
+def getRandomResponse1():
+
+    randomResponses = { 1: "douche",
+                        2: "ass",
+                        3: "turd",
+                        4: "rectum" ,
+                        5: "butt",
+                        6: "cock",
+                        7: "shit",
+                        8: "crotch",
+                        9: "bitch",
+                        10: 'turd',
+                        11: 'prick',
+                        12: 'slut',
+                        13: 'taint',
+                        14: 'fuck',
+                        15: 'dick',
+                        16: 'boner',
+                        17: 'shart',
+                        18: 'nut',
+                        19: 'sphincter',
+                        }
+    whichResponse1 = randomResponses[randint(1,19)]
+
+    return whichResponse1
+
+def getRandomResponse2():
+
+    randomResponses = { 1: "pilot",
+                        2: "canoe",
+                        3: "captain",
+                        4: "pirate" ,
+                        5: "hammer",
+                        6: "knob",
+                        7: 'box',
+                        8: 'jockey',
+                        9: 'nazi',
+                        10: 'waffle',
+                        11: 'goblin',
+                        12: 'blossom',
+                        13: 'biscuit',
+                        14: 'clown',
+                        15: 'socket',
+                        16: 'monster',
+                        17: 'hound',
+                        18: 'dragon',
+                        19: 'ballon',
+                        }
+    whichResponse2 = randomResponses[randint(1,19)]
+
+    return whichResponse2
+
+
+
+response = input("Hello, let's talk.\n")
+
+while True:
+
+    response = input(getResponse(response) + "\n")
